@@ -1,0 +1,673 @@
+```html
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cửa Lò Travel</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+
+        section {
+            scroll-margin-top: 70px;
+        }
+
+        .navbar {
+            background: #0875f5 !important;
+        }
+
+        .navbar-brand {
+            font-size: 17px;
+        }
+
+        .nav-link {
+            color: white !important;
+            font-size: 14px;
+        }
+
+        .hero-section {
+            background:
+                linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.2)),
+                url("k11A3/2.webp") center/cover no-repeat;
+            min-height: 480px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-section h1 {
+            font-size: clamp(32px, 5vw, 58px);
+            font-weight: bold;
+        }
+
+        .hero-section p {
+            font-size: 16px;
+        }
+
+        .section-title {
+            color: #0875f5;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+
+        .section-desc {
+            text-align: center;
+            color: #777;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+
+        .feature-box {
+            background: white;
+            padding: 25px 15px;
+            text-align: center;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px #ddd;
+            height: 100%;
+        }
+
+        .feature-box i {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .feature-box h5 {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .feature-box p {
+            font-size: 14px;
+            margin-bottom: 0;
+        }
+
+        .card {
+            height: 100%;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .card-img-custom {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .card-text {
+            font-size: 14px;
+        }
+
+        .food-img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 7px;
+            box-shadow: 0 3px 10px #ddd;
+        }
+
+        .food-item {
+            margin-bottom: 20px;
+        }
+
+        .food-item h5 {
+            font-size: 17px;
+            font-weight: bold;
+        }
+
+        .food-item i {
+            color: #16b978;
+            margin-right: 7px;
+        }
+
+        .food-item p {
+            color: #777;
+            font-size: 14px;
+            margin-left: 25px;
+        }
+
+        .hotel-img {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+        }
+
+        .price {
+            color: #ed4545;
+            font-weight: bold;
+        }
+
+        .review-section {
+            background: #f7f7fb;
+        }
+
+        .review-box {
+            background: white;
+            border-radius: 10px;
+            padding: 25px 18px;
+            text-align: center;
+            height: 100%;
+            box-shadow: 0 2px 8px #ddd;
+        }
+
+        .review-box img {
+            width: 75px;
+            height: 75px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 12px;
+        }
+
+        .stars {
+            color: #ffb900;
+            margin-bottom: 10px;
+        }
+
+        .review-box p {
+            color: #777;
+            font-size: 13px;
+        }
+
+        footer {
+            background: #20242b;
+            color: white;
+            padding: 35px 0;
+        }
+
+        footer h5 {
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        footer p, footer a {
+            color: #ddd;
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #0d8bff;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                min-height: 350px;
+            }
+
+            .food-img {
+                height: 280px;
+            }
+
+            .card-img-custom {
+                height: 220px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="#">
+            <i class="fa-solid fa-water"></i> CỬA LÒ TRAVEL
+        </a>
+
+        <button class="navbar-toggler" data-bs-toggle="collapse"
+                data-bs-target="#menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menu">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Trang chủ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#diemden">Điểm đến</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#amthuc">Ẩm thực</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#khachsan">Khách sạn</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#lienhe">Liên hệ</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section class="hero-section">
+    <div class="container">
+        <h1>Khám Phá Biển Cửa Lò</h1>
+
+        <p>
+            Trải nghiệm bãi biển tuyệt đẹp, tận hưởng không khí trong lành
+            và thưởng thức hải sản tươi ngon.
+        </p>
+
+        <a href="#diemden" class="btn btn-warning fw-bold">
+            <i class="fa-solid fa-location-dot"></i> Khám phá ngay
+        </a>
+
+        <a href="#khachsan" class="btn btn-outline-light fw-bold">
+            Đặt tour ngay
+        </a>
+    </div>
+</section>
+
+<section class="py-5" style="background:#f7f7fb">
+    <div class="container">
+        <div class="row g-4">
+
+            <div class="col-md-4">
+                <div class="feature-box">
+                    <i class="fa-solid fa-sun text-warning"></i>
+                    <h5>Nắng Vàng Cát Mịn</h5>
+                    <p>
+                        Bãi biển kéo dài hơn 10km với làn nước trong xanh
+                        và bờ biển đẹp, thích hợp cho kỳ nghỉ gia đình.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="feature-box">
+                    <i class="fa-solid fa-fish text-info"></i>
+                    <h5>Hải Sản Tươi Sống</h5>
+                    <p>
+                        Thưởng thức mực nháy, ghẹ hấp, tôm biển tươi ngon
+                        với hương vị đặc trưng của vùng biển.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="feature-box">
+                    <i class="fa-solid fa-ship text-success"></i>
+                    <h5>Khám Phá Đảo Ngư</h5>
+                    <p>
+                        Tuyến tham quan biển đảo, khám phá cảnh đẹp
+                        và trải nghiệm cuộc sống của ngư dân.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="py-5" id="diemden">
+    <div class="container">
+
+        <h2 class="section-title">Điểm Đến Nổi Bật</h2>
+        <p class="section-desc">
+            Những danh thắng không thể bỏ qua khi du lịch Cửa Lò
+        </p>
+
+        <div class="row g-4">
+
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="k11A3/2.webp"
+                         class="card-img-custom"
+                         alt="Bãi biển Cửa Lò">
+
+                    <div class="card-body">
+                        <h5 class="card-title">Bãi Biển Cửa Lò</h5>
+                        <p class="card-text">
+                            Bãi tắm trong xanh với đường bờ biển dài,
+                            đầy đủ dịch vụ vui chơi và giải trí.
+                        </p>
+                        <span class="badge bg-primary">Tắm biển</span>
+                        <span class="badge bg-success">Check-in</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="12.jpeg"
+                         class="card-img-custom"
+                         alt="Đảo Ngư">
+
+                    <div class="card-body">
+                        <h5 class="card-title">Đảo Song Ngư</h5>
+                        <p class="card-text">
+                            Hòn đảo có hệ sinh thái biển đa dạng,
+                            cảnh quan thiên nhiên đẹp.
+                        </p>
+                        <span class="badge bg-primary">Tham quan</span>
+                        <span class="badge bg-success">Check-in</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="13.jpeg"
+                         class="card-img-custom"
+                         alt="Làng chài Cửa Hội">
+
+                    <div class="card-body">
+                        <h5 class="card-title">Làng Chài Cửa Hội</h5>
+                        <p class="card-text">
+                            Tìm hiểu cuộc sống thường ngày và hoạt động
+                            đánh bắt hải sản của ngư dân.
+                        </p>
+                        <span class="badge bg-primary">Tìm hiểu</span>
+                        <span class="badge bg-success">Trải nghiệm</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="py-5" id="amthuc" style="background:#f7f7fb">
+    <div class="container">
+
+        <h2 class="section-title">Ẩm Thực Đặc Sản</h2>
+        <p class="section-desc">
+            Hương vị mặn mòi, khó quên của vùng biển Nghệ An
+        </p>
+
+        <div class="row g-4 align-items-center">
+
+            <div class="col-md-6">
+                <img src="k11A3/1.png"
+                     class="food-img"
+                     alt="Hải sản Cửa Lò">
+            </div>
+
+            <div class="col-md-6">
+
+                <div class="food-item">
+                    <h5>
+                        <i class="fa-solid fa-circle-check"></i>
+                        Mực Nháy Cửa Lò
+                    </h5>
+                    <p>
+                        Những con mực vừa đánh bắt lên bờ còn trong suốt,
+                        thịt giòn ngọt, thích hợp hấp hoặc nướng.
+                    </p>
+                </div>
+
+                <div class="food-item">
+                    <h5>
+                        <i class="fa-solid fa-circle-check"></i>
+                        Mọc Cua Bể
+                    </h5>
+                    <p>
+                        Món ăn độc đáo với thịt cua, thịt lợn xay,
+                        được chế biến hấp dẫn.
+                    </p>
+                </div>
+
+                <div class="food-item">
+                    <h5>
+                        <i class="fa-solid fa-circle-check"></i>
+                        Cá Thu Cửa Lò
+                    </h5>
+                    <p>
+                        Cá thu tươi ngon, thịt chắc ngọt,
+                        có thể chế biến thành nhiều món ăn.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5" id="khachsan">
+    <div class="container">
+
+        <h2 class="section-title">Khách Sạn và Lưu Trú</h2>
+        <p class="section-desc">
+            Hệ thống khách sạn đa dạng, chất lượng cao tại Cửa Lò
+        </p>
+
+        <div class="row g-4">
+
+            <div class="col-md-4">
+                <div class="card">
+                    <img
+                        src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80"
+                        class="hotel-img"
+                        alt="Khách sạn sang trọng">
+
+                    <div class="card-body">
+                        <h5 class="card-title">Khách Sạn Bình Minh</h5>
+
+                        <p class="text-warning mb-2">
+                            ★★★★★
+                        </p>
+
+                        <p class="card-text">
+                            Khách sạn tiện nghi, không gian nghỉ dưỡng
+                            thoải mái gần biển.
+                        </p>
+
+                        <div class="d-flex justify-content-between align-items-center">
+                            <a href="#lienhe" class="btn btn-primary btn-sm">
+                                Đặt phòng
+                            </a>
+                            <span class="price">650.000 đ/đêm</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <img
+                        src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=800&q=80"
+                        class="hotel-img"
+                        alt="Khách sạn ven biển">
+
+                    <div class="card-body">
+                        <h5 class="card-title">Mường Thanh Cửa Lò</h5>
+
+                        <p class="text-warning mb-2">
+                            ★★★★★
+                        </p>
+
+                        <p class="card-text">
+                            Không gian nghỉ dưỡng sang trọng,
+                            thuận tiện di chuyển đến bãi biển.
+                        </p>
+
+                        <div class="d-flex justify-content-between align-items-center">
+                            <a href="#lienhe" class="btn btn-primary btn-sm">
+                                Đặt phòng
+                            </a>
+                            <span class="price">1.200.000 đ/đêm</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <img
+                        src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=800&q=80"
+                        class="hotel-img"
+                        alt="Khu nghỉ dưỡng">
+
+                    <div class="card-body">
+                        <h5 class="card-title">Vinpearl Resort</h5>
+
+                        <p class="text-warning mb-2">
+                            ★★★★★
+                        </p>
+
+                        <p class="card-text">
+                            Khu nghỉ dưỡng với không gian rộng,
+                            phù hợp cho kỳ nghỉ gia đình.
+                        </p>
+
+                        <div class="d-flex justify-content-between align-items-center">
+                            <a href="#lienhe" class="btn btn-primary btn-sm">
+                                Đặt phòng
+                            </a>
+                            <span class="price">2.500.000 đ/đêm</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="py-5 review-section">
+    <div class="container">
+
+        <h2 class="section-title">Đánh Giá Từ Du Khách</h2>
+        <p class="section-desc">
+            Cảm nhận của khách hàng sau chuyến du lịch Cửa Lò
+        </p>
+
+        <div class="row g-4">
+
+            <div class="col-md-4">
+                <div class="review-box">
+                    <img
+                        src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80"
+                        alt="Khách hàng Minh Anh">
+
+                    <h6 class="fw-bold">Nguyễn Minh Anh</h6>
+
+                    <div class="stars">★★★★★</div>
+
+                    <p>
+                        "Bãi biển rất đẹp, hải sản tươi ngon.
+                        Tôi sẽ quay lại vào mùa hè năm sau."
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="review-box">
+                    <img
+                        src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80"
+                        alt="Khách hàng Thu Hà">
+
+                    <h6 class="fw-bold">Trần Thu Hà</h6>
+
+                    <div class="stars">★★★★★</div>
+
+                    <p>
+                        "Không khí trong lành, người dân thân thiện,
+                        chuyến đi rất đáng nhớ."
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="review-box">
+                    <img
+                        src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=200&q=80"
+                        alt="Khách hàng Tuấn">
+
+                    <h6 class="fw-bold">Lê Tuấn</h6>
+
+                    <div class="stars">★★★★★</div>
+
+                    <p>
+                        "Dịch vụ tốt, cảnh biển tuyệt đẹp,
+                        phù hợp cho cả gia đình nghỉ dưỡng."
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<footer id="lienhe">
+    <div class="container">
+        <div class="row g-4">
+
+            <div class="col-md-4">
+                <h5>Cửa Lò Travel – Tận hưởng từng khoảnh khắc</h5>
+
+                <p>
+                    Khám phá vẻ đẹp biển Cửa Lò, thưởng thức
+                    đặc sản và trải nghiệm kỳ nghỉ đáng nhớ.
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-location-dot"></i>
+                    Cửa Lò, Nghệ An, Việt Nam
+                </p>
+            </div>
+
+            <div class="col-md-4">
+                <h5>DANH MỤC</h5>
+
+                <p><a href="#diemden">Điểm đến nổi bật</a></p>
+                <p><a href="#amthuc">Ẩm thực đặc sản</a></p>
+                <p><a href="#khachsan">Khách sạn và lưu trú</a></p>
+            </div>
+
+            <div class="col-md-4">
+                <h5>Kết nối với chúng tôi</h5>
+
+                <p>
+                    <i class="fa-solid fa-phone"></i>
+                    Liên hệ đặt phòng và tư vấn
+                </p>
+
+                <a href="#" class="btn btn-primary btn-sm">
+                    <i class="fa-brands fa-facebook"></i>
+                    Facebook
+                </a>
+
+                <a href="#" class="btn btn-danger btn-sm">
+                    <i class="fa-brands fa-youtube"></i>
+                    YouTube
+                </a>
+
+                <a href="#" class="btn btn-success btn-sm">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    Liên hệ
+                </a>
+            </div>
+
+        </div>
+
+        <hr>
+
+        <p class="text-center mb-0">
+            © 2026 Cửa Lò Travel. Thiết kế website du lịch Cửa Lò.
+        </p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
+```
